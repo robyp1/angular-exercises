@@ -1,0 +1,35 @@
+<br>
+<!--template semplice senza stili, mostro tutti  i valori del json-->
+<!-- <div>
+    Nome: {{user.nome}}<br>
+    Cognome: {{user.cognome}}<br>
+    Eta': {{user.eta}}<br>
+</div> -->
+
+
+<!-- si può usare style.proprietàCssCamelCase(senza - ma maiuscole) per applicare lo stile ad esempio il color
+es style.backgroundColor anzicè background-color
+applico grassetto sul nome se l'eta è > 18 e applico sempre sul nome il valore del colore 
+-->
+<div>
+    <span [class.grassetto]='user.eta > 18' [style.color]="user.color">
+        Nome: {{user.nome}}<br>
+    </span><br>
+    <span>
+        Cognome: {{user.cognome}}<br>
+    </span>
+    Eta': {{user.eta}}<br>
+    <hr>
+</div>
+
+<!--avendo definito nel json di user l'attributo color si può anche usare ngStyle="user" -->
+<div>
+    <span [class.grassetto]='user.eta > 18'
+        [ngStyle]="user">
+        Nome: {{user.nome}}<br>
+    </span><br>
+        Cognome: {{user.cognome}}<br>
+        Eta': {{user.eta}}<br>
+    <hr>
+</div> 
+

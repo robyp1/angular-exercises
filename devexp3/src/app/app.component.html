@@ -1,0 +1,41 @@
+<button (click)="mostraCognomeUtenti = !mostraCognomeUtenti">Mostra nascondi cognomi</button><br>
+Mostra/Nascondi cognomi, stato: {{mostraCognomeUtenti}}
+<div *ngFor="let u of utenti;let i = index">
+  <span>User n. {{i}} </span>
+  <div *ngIf="u.eta >= 18">
+      <utente [user]="u"  [mostraCognome] ="mostraCognomeUtenti"></utente>
+  </div>
+  <div *ngIf="u.eta < 18">
+      Utente {{u.nome}} non visualizzato completamente perchè minorenne 
+  <hr>
+  </div> 
+  <div>
+    <!-- la variabile x non esiste per non andare in errore si usa l'elvis operator tra variabile e nome proprietà -->
+    {{x?.value}}
+  </div>
+</div>
+
+
+<br>
+*{{dati.booleano}}
+<switcher [value]="dati.booleano" (valueChange) = "dati.booleano = $event; utente.nome='Ma'">
+</switcher>
+<!--secondo modo mettere input ed output insieme avendo chiamato output come input ma con suffisso change, two way data binding-->
+<br>versione con two way data binding<br>
+<switcher [(value)]="dati.booleano">
+</switcher>
+
+<hr>
+<br>
+<br>
+{{utente.nome}}
+<uppercaser [testo]="utenteClonato.nome" (testoChange)="utenteClonato.nome=$event;"></uppercaser>
+<br>
+<lowercaser [testo]="utenteClonato.nome" (testoChange)="utenteClonato.nome=$event;"></lowercaser>
+
+<br>
+<br>versione con two way data binding<br>
+{{utente.nome}}
+<uppercaser [(testo)]="utenteClonato.nome"></uppercaser>
+<br>
+<lowercaser [(testo)]="utenteClonato.nome"></lowercaser>

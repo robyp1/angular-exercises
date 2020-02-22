@@ -1,0 +1,12 @@
+<mio-componente [dato]="'una stringa qualunque'"></mio-componente>
+<componenente-con-input [dato]="'una stringa a caso'"></componenente-con-input>
+<test [someInput]="data" (someEvent)="metodoDellaClasseAppComponente($event)"></test>
+<componente-con-output [someInput]="data2" (evento)="loggaEvento($event)"></componente-con-output>
+<secondo-componente 
+    [dato2]="dataPerSecondoComponente"
+    (clickBottone)="loggaEvento($event)"
+></secondo-componente>
+
+
+
+

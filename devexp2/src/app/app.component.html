@@ -1,0 +1,31 @@
+<div *ngFor="let u of utenti">
+    <div *ngIf="u.eta >= 18">
+        <utente [user]="u"  ></utente>
+    </div>
+    <div *ngIf="u.eta < 18">
+        Utente {{u.nome}} non visualizzato completamente perchè minorenne 
+    </div>  
+</div>
+<hr>
+<div *ngFor="let u of utenti">
+    <div *ngIf="!(u.eta < 18)" class="grassetto">
+        Testo di esempio 1
+    </div>
+    <div *ngIf="u.eta > 18">
+        Testo di esempio 2
+    </div>  
+</div>
+<!--
+Questo sotto si può fare applicando la condizione sullo stile, in modo che lo stile sia applicato se la condizione è vera, senza ripetere il contenuto
+-->
+*************
+<div *ngFor="let u of utenti">
+    <div [class.grassettoApp]="u.eta > 18">
+        Testo di esempio 1
+    </div>
+</div>
+
+**********************
+<div *ngFor="let u of utenti">
+
+</div>

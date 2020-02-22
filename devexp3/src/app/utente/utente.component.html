@@ -1,0 +1,12 @@
+<div>
+    <span [class.grassetto]='user.eta > 18' [style.color]="user.color">
+        Nome: {{user.nome}}<br>
+    </span><br>
+    <span *ngIf="mostraCognome">
+        Cognome: {{user.cognome}}<br>
+    </span>
+    Eta': {{user.eta}}<br>
+</div>
+<hr>
+
+
